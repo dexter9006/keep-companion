@@ -171,8 +171,8 @@ Config.core_items = {
         item_name = 'petwaterbottleportable',
         settings = {
             duration = 2,
-            max_capacity = 10,
-            water_bottle_refill_value = 2, -- how much every bottle of water can fill flask
+            max_capacity = 3,
+            water_bottle_refill_value = 1, -- how much every bottle of water can fill flask
             thirst_reduction_per_drinking = 25, --(additive)
             thirst_value_increase_per_tick = 0.1,
         }
