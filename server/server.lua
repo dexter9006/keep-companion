@@ -279,24 +279,24 @@ local function fillwater_bottle(source, item)
 
     if type(item.info) ~= "table" or (type(item.info) == "table" and item.info.liter == nil) then
         initialize_info_waterbottle(Player, item)
-        TriggerClientEvent('QBCore:Notify', source, 'Washing water bottle!', 'primary', 2500)
+        TriggerClientEvent('QBCore:Notify', source, 'Vous avez lavé la bouteille', 'primary', 2500)
         return
     end
 
     if item.info.liter == nil then
         -- backup initialization
         initialize_info_waterbottle(Player, item)
-        TriggerClientEvent('QBCore:Notify', source, 'Washing water bottle!', 'primary', 2500)
+        TriggerClientEvent('QBCore:Notify', source, 'Vous avez lavé la bouteille!', 'primary', 2500)
         return
     end
 
     if item.info.liter > max_c then
-        TriggerClientEvent('QBCore:Notify', source, 'could not do that already reached max capacity', 'error', 2500)
+        TriggerClientEvent('QBCore:Notify', source, 'Capacité max atteinte!', 'error', 2500)
         return
     elseif item.info.liter == max_c then
         amount = max_c
-        TriggerClientEvent('QBCore:Notify', source, 'filling already filled bottle has no effect on capacity',
-            'error', 2500)
+        TriggerClientEvent('QBCore:Notify', source, 'La bouteille est tellement remplie que vous avez fait tomber de l\'eau', 'error', 2500)
+        return
     else
         amount = item.info.liter + water_bottle_refill_value
         if amount >= max_c then
@@ -308,7 +308,7 @@ local function fillwater_bottle(source, item)
         return
     end
     save_info_waterbottle(Player, item, amount)
-    TriggerClientEvent('QBCore:Notify', source, 'Filled bottle', 'success', 2500)
+    TriggerClientEvent('QBCore:Notify', source, 'Bouteille remplie (+1L)', 'success', 2500)
 end
 
 QBCore.Functions.CreateUseableItem(core_items.waterbottle.item_name, function(source, item)
