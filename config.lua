@@ -27,7 +27,7 @@ Config.Balance = {
         animationInterval = 90
     }, -- sec pet gonna go wandering around player after player is AFK for a certain time
 
-    petting_stress_relief = math.random(12, 24)
+    petting_stress_relief = math.random(6, 12)
 }
 
 
@@ -179,13 +179,29 @@ Config.core_items = {
     }
 }
 
-
 -- K9 Settings
 Config.inventory_name = 'qb-inventory'
 local illegal_items = {
     'weed_brick',
+    'coke_brick',
     'coke_small_brick',
-    'coke_brick'
+    --
+    'joint',
+    'bong',
+    'cokebaggy',
+    'crack_baggy',
+    'xtcbaggy',
+    'oxy',
+    'meth',
+    'weed_white-widow',
+    'weed_skunk',
+    'weed_purple-haze',
+    'weed_og-kush',
+    'weed_amnesia',
+    'weed_ak47',
+    --
+    'weedplant_weed',
+    'weedplant_packedweed',
 }
 
 Config.k9 = {
